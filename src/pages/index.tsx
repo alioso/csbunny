@@ -1,15 +1,17 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 
-import HomePageGrid from "../components/HomePageGrid/HomePageGrid"
-import Page from "../layouts/page"
+import HomePageGrid from "../components/HomePageGrid"
+import Title from "../components/Title"
+// import * as styles from "./css/homepage.module.css"
 
 // markup
 const Home: React.FC<any> = ({ data }) => {
   return (
-    <Page>
+    <div>
+      <Title />
       <HomePageGrid tiles={data.allContentfulHomeTiles.nodes} />
-    </Page>
+    </div>
   )
 }
 

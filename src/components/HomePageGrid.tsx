@@ -1,6 +1,6 @@
 import React from "react"
 
-import * as styles from "./HomePageGrid.module.css"
+import * as styles from "../css/HomePageGrid.module.css"
 
 interface Props {
   tiles: {
@@ -13,7 +13,7 @@ const HomePageGrid: React.FC<Props> = ({ tiles }) => {
   return (
     <div className={styles.container}>
       {tiles.map((tile, index) => {
-        const gIndex = `g${index}`
+        const gIndex = `tile${index}`
         const GridItemClasses = `${styles.tile} ${styles[gIndex]}`
 
         return (

@@ -1,0 +1,75 @@
+html,
+body {
+  height: 100%;
+  background-color: #f4f4f4;
+}
+
+body {
+  max-width: 1540px;
+  margin: 0 auto;
+}
+
+#__nuxt,
+#__layout {
+  height: 100%;
+}
+
+/*
+**********************
+Page transitions below
+**********************
+*/
+.page-enter-active,
+.page-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 320ms;
+}
+
+.page-enters,
+.page-leave-to {
+  opacity: 0;
+}
+
+/* .page-enter .home-image-container:nth-of-type(1),
+.page-leave-to .home-image-container:nth-of-type(1) {
+  height: 100%;
+} */
+
+h1 {
+  font-size: var(--headings-size-h1);
+  line-height: var(--headings-line-height-h1);
+}
+
+h2 {
+  font-size: var(--headings-size-h2);
+  line-height: var(--headings-line-height-h2);
+}
+
+h3 {
+  font-size: var(--headings-size-h3);
+  line-height: var(--headings-line-height-h3);
+}
+
+h4 {
+  font-size: var(--headings-size-h4);
+  line-height: var(--headings-line-height-h4);
+}
+
+h5 {
+  font-size: var(--headings-size-h5);
+  line-height: var(--headings-line-height-h5);
+}
+
+:root {
+  --headings-size-h1: 2.5rem;
+  --headings-size-h2: 1.602rem;
+  --headings-size-h3: 1.266rem;
+  --headings-size-h4: 1.125rem;
+  --headings-size-h5: 1;
+  --headings-line-height-h1: 2.125rem;
+  --headings-line-height-h2: 1.75rem;
+  --headings-line-height-h3: 1.5rem;
+  --headings-line-height-h4: 1.25rem;
+  --headings-line-height-h5: 1rem;
+}
