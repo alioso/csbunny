@@ -4,9 +4,20 @@
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  flex: 1;
+  height: 100%;
 }
 
 .tile {
+  display: flex;
+  padding: 1rem;
+}
+
+.menuTile > * {
+  width: 50% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tile0 {
@@ -31,4 +42,9 @@
 
 .tile5 {
   grid-area: 4 / 2 / 5 / 3;
+}
+
+.featuredImage {
+  object-fit: cover;
+  width: 100%;
 }

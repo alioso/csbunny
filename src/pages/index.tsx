@@ -3,12 +3,12 @@ import { graphql } from "gatsby"
 
 import HomePageGrid from "../components/HomePageGrid"
 import Title from "../components/Title"
-// import * as styles from "./css/homepage.module.css"
+import * as styles from "../css/homepage.module.css"
 
 // markup
 const Home: React.FC<any> = ({ data }) => {
   return (
-    <div>
+    <div className={styles.homepageContainer}>
       <Title />
       <HomePageGrid tiles={data.allContentfulHomeTiles.nodes} />
     </div>
@@ -24,10 +24,8 @@ export const query = graphql`
         page {
           title
           slug
-          image {
-            url
-          }
         }
+        feature
         image {
           url
         }
