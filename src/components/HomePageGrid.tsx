@@ -24,7 +24,9 @@ const HomePageGrid: React.FC<Props> = ({ tiles }) => {
         return (
           <div key={tile.id} className={GridItemClasses}>
             {tile.image && (
-              <img src={tile.image.url} className={styles.featuredImage} />
+              <div>
+                <img src={tile.image.url} className={styles.featuredImage} />
+              </div>
             )}
             {!tile.feature && <div>{tile.title}</div>}
           </div>
