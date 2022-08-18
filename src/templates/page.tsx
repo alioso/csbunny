@@ -1,7 +1,7 @@
 import React from "react"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 
-import Header from "../components/Header"
+import PageLayout from "../layouts/PageLayout"
 
 interface Props {
   pageContext: any
@@ -11,10 +11,9 @@ const Page: React.FC<Props> = ({ pageContext }) => {
   const { page } = pageContext
 
   return (
-    <div>
-      <Header />
+    <PageLayout>
       <div>{renderRichText(page.body, {})}</div>
-    </div>
+    </PageLayout>
   )
 }
 

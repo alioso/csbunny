@@ -1,5 +1,5 @@
 import React from "react"
-
+import { Link } from "gatsby"
 import menuItems from "../data/menu"
 
 interface MenuItem {
@@ -14,7 +14,7 @@ const Menu = () => {
         const { title, path } = item
         return (
           <li key={path}>
-            <a href={path}>{title}</a>
+            <Link to={`/${path}`}>{title}</Link>
           </li>
         )
       })}
