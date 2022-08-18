@@ -21,6 +21,11 @@ body {
   margin: 0;
 }
 
+a {
+  color: var(--main-link-c);
+  text-decoration: none;
+}
+
 /*
 **********************
 Page transitions below
@@ -69,6 +74,7 @@ h5 {
 }
 
 :root {
+  /* TYPOGRAPHY */
   --headings-size-h1: 2.5rem;
   --headings-size-h2: 1.602rem;
   --headings-size-h3: 1.266rem;
@@ -79,4 +85,6 @@ h5 {
   --headings-line-height-h3: 1.5rem;
   --headings-line-height-h4: 1.25rem;
   --headings-line-height-h5: 1rem;
+  /* COLOR PALETTE */
+  --main-link-c: orange;
 }

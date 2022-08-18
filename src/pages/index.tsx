@@ -5,7 +5,6 @@ import HomePageGrid from "../components/HomePageGrid"
 import Title from "../components/Title"
 import * as styles from "../css/homepage.module.css"
 
-// markup
 const Home: React.FC<any> = ({ data }) => {
   return (
     <div className={styles.homepageContainer}>

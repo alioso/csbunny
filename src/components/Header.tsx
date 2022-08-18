@@ -5,12 +5,10 @@ import Title from "./Title"
 
 const Header = () => {
   return (
-    <>
-      <header>
-        <Title />
-        <Menu />
-      </header>
-    </>
+    <header>
+      <Title />
+      <Menu />
+    </header>
   )
 }
 
