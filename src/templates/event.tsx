@@ -8,11 +8,11 @@ interface Props {
 }
 
 const Page: React.FC<Props> = ({ pageContext }) => {
-  const { page } = pageContext
+  const { event } = pageContext
 
   return (
     <PageLayout>
-      <div>{page.body && renderRichText(page.body, {})}</div>
+      <div>{event.body && renderRichText(event.body, {})}</div>
     </PageLayout>
   )
 }
