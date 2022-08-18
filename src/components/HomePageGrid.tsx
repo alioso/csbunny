@@ -1,5 +1,5 @@
 import React from "react"
-import * as styles from "../css/HomePageGrid.module.css"
+import * as styles from "../css/homePageGrid.module.css"
 
 interface Props {
   tiles: {

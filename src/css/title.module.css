@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  padding: 1rem;
+  font-size: 30px;
+}

@@ -3,3 +3,8 @@
   flex-direction: column;
   height: 100%;
 }
+
+.homeTitle {
+  color: white;
+  position: absolute;
+}

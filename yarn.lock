@@ -1096,6 +1096,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/merriweather@^4.5.13":
+  version "4.5.13"
+  resolved "https://registry.yarnpkg.com/@fontsource/merriweather/-/merriweather-4.5.13.tgz#7b4ac15116091ed5bc1e64dc8ec80e96ed22b38f"
+  integrity sha512-VYPWyVtPvW8S4gGxWE+PdkVHNr44456Gkm49mD4qXmP8Zs2dPU8YG8an8KBIqHcPI6H74iGyll2+AohmGApkxw==
+
 "@gatsbyjs/parcel-namer-relative-to-cwd@1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/parcel-namer-relative-to-cwd/-/parcel-namer-relative-to-cwd-1.4.0.tgz#e1c225952922b03088a37649d06cf51b86ba4616"

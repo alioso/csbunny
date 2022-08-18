@@ -9,7 +9,7 @@ import * as styles from "../css/homepage.module.css"
 const Home: React.FC<any> = ({ data }) => {
   return (
     <div className={styles.homepageContainer}>
-      {/*<Title />*/}
+      <Title classes={styles.homeTitle} />
       <HomePageGrid tiles={data.allContentfulHomeTiles.nodes} />
     </div>
   )
