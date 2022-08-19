@@ -7,9 +7,7 @@ interface Props {
     title: string
     id: string
     feature: boolean
-    page: {
-      slug: string
-    }
+    slug: string
     image: {
       url: string
     }
@@ -34,7 +32,7 @@ const HomePageGrid: React.FC<Props> = ({ tiles }) => {
             )}
             {!tile.feature && (
               <div>
-                <Link to={tile.page.slug}>{tile.title}</Link>
+                <Link to={tile.slug}>{tile.title}</Link>
               </div>
             )}
           </div>

@@ -31,6 +31,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
   const pageTemplate = path.resolve(`src/templates/page.tsx`)
   const eventTemplate = path.resolve(`src/templates/event.tsx`)
+
   pageResults.data.allContentfulPage.nodes.forEach((node) => {
     createPage({
       path: `/${node.slug}`,
@@ -40,6 +41,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     })
   })
+
   eventResults.data.allContentfulEvent.nodes.forEach((node) => {
     createPage({
       path: `/events/${node.slug}`,

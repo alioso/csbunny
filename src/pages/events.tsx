@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import { Link } from "gatsby"
 
 import PageLayout from "../layouts/PageLayout"
 
@@ -8,6 +9,7 @@ interface Props {
     allContentfulEvent: {
       nodes: {
         id: string
+        slug: string
         date: string
         dateForOp: string
         title: string
@@ -59,7 +61,9 @@ const EventsPage: React.FC<Props> = ({ data }) => {
 
       return (
         <section key={event.id}>
-          <h3>{event.title}</h3>
+          <h3>
+            <Link to={`/events/${event.slug}`}>{event.title}</Link>
+          </h3>
           <div>
             {dayOfWeekName}, {event.date}
           </div>
@@ -72,9 +76,9 @@ const EventsPage: React.FC<Props> = ({ data }) => {
     <PageLayout>
       <div>
         <h2>Upcoming</h2>
-        <div>{listEvents("upcoming", "desc")}</div>
+        <div>{listEvents("upcoming", "asc")}</div>
         <h2>Previous</h2>
-        <div>{listEvents("previous", "asc")}</div>
+        <div>{listEvents("previous", "desc")}</div>
       </div>
     </PageLayout>
   )

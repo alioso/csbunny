@@ -20,10 +20,7 @@ export const query = graphql`
       nodes {
         id
         title
-        page {
-          title
-          slug
-        }
+        slug
         feature
         image {
           url
