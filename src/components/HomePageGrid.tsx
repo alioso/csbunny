@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import * as styles from "../css/homePageGrid.module.css"
 
 interface Props {
@@ -6,6 +7,9 @@ interface Props {
     title: string
     id: string
     feature: boolean
+    page: {
+      slug: string
+    }
     image: {
       url: string
     }
@@ -28,7 +32,11 @@ const HomePageGrid: React.FC<Props> = ({ tiles }) => {
                 <img src={tile.image.url} className={styles.featuredImage} />
               </div>
             )}
-            {!tile.feature && <div>{tile.title}</div>}
+            {!tile.feature && (
+              <div>
+                <Link to={tile.page.slug}>{tile.title}</Link>
+              </div>
+            )}
           </div>
         )
       })}

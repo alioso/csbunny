@@ -20,6 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
       allContentfulEvent {
         nodes {
           id
+          date
           slug
           body {
             raw
