@@ -16,41 +16,65 @@ interface Props {
   }
 }
 
+type Timeline = "previous" | "upcoming"
+type Sorting = "asc" | "desc"
+
 const EventsPage: React.FC<Props> = ({ data }) => {
-  const events = data?.allContentfulEvent?.nodes
-  const orderedEvents = events?.sort((a, b) => {
-    const aDate = new Date(a.dateForOp).valueOf()
-    const bDate = new Date(b.dateForOp).valueOf()
+  const listEvents = (isTimeline: Timeline, isSorting: Sorting) => {
+    const [timeline, setTimeline] = React.useState<Timeline>("upcoming")
+    const [sorting, setSorting] = React.useState<Sorting>("asc")
+    const events = data?.allContentfulEvent?.nodes
 
-    console.log(aDate, bDate)
+    React.useEffect(() => {
+      setTimeline(isTimeline)
+      setSorting(isSorting)
+    }, [isTimeline, isSorting])
 
-    return aDate - bDate
-  })
+    const timelinedEvents = events?.filter((event) => {
+      const eventDate = new Date(event.dateForOp).valueOf()
+      const todayDate = new Date()
+      const tomorrowDate = new Date()
+      tomorrowDate.setTime(todayDate.getTime() - 8.64e7)
+      const today = todayDate.valueOf()
+      const tomorrow = tomorrowDate.valueOf()
+
+      if (timeline === "upcoming") {
+        return eventDate > tomorrow
+      } else {
+        return eventDate < today
+      }
+    })
+
+    const orderedEvents = timelinedEvents?.sort((a, b) => {
+      const aDate = new Date(a.dateForOp).valueOf()
+      const bDate = new Date(b.dateForOp).valueOf()
+
+      return sorting === "asc" ? aDate - bDate : bDate - aDate
+    })
+
+    return orderedEvents.map((event) => {
+      const dayOfWeekName = new Date(event.dateForOp).toLocaleString("en-US", {
+        weekday: "long"
+      })
+
+      return (
+        <section key={event.id}>
+          <h3>{event.title}</h3>
+          <div>
+            {dayOfWeekName}, {event.date}
+          </div>
+        </section>
+      )
+    })
+  }
 
   return (
     <PageLayout>
       <div>
-        {orderedEvents.map((event) => {
-          const dayOfWeekName = new Date(event.dateForOp).toLocaleString(
-            "en-US",
-            {
-              weekday: "long"
-            }
-          )
-
-          return (
-            <section key={event.id}>
-              <h3>{event.title}</h3>
-              <div>
-                {dayOfWeekName}, {event.date}
-              </div>
-            </section>
-          )
-        })}
         <h2>Upcoming</h2>
-        <div></div>
+        <div>{listEvents("upcoming", "desc")}</div>
         <h2>Previous</h2>
-        <div></div>
+        <div>{listEvents("previous", "asc")}</div>
       </div>
     </PageLayout>
   )
