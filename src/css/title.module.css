@@ -14,9 +14,3 @@
 .subTitle {
   font-size: 18px;
 }
-
-.container a:link,
-.container a:hover,
-.container a:visited {
-  color: white;
-}

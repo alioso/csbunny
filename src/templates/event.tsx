@@ -12,6 +12,7 @@ const Page: React.FC<Props> = ({ pageContext }) => {
 
   return (
     <PageLayout>
+      <h1>{event.title}</h1>
       <div>{event.body && renderRichText(event.body, {})}</div>
     </PageLayout>
   )
