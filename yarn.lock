@@ -9107,6 +9107,11 @@ react-helmet@^6.1.0:
     react-fast-compare "^3.1.1"
     react-side-effect "^2.1.0"
 
+react-hover-video-player@^9.7.0:
+  version "9.7.0"
+  resolved "https://registry.yarnpkg.com/react-hover-video-player/-/react-hover-video-player-9.7.0.tgz#e6a94166a862d14dc66664a6356f1ae110e34d82"
+  integrity sha512-9JHKqCVeEtYBEt7GVNNa/Er7kdfjdB0+jb7+4lVyiDR9F5uJbLk+xR7QA22U2vrfMiHrC1C2Yb5pVrlCNOEtLw==
+
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
